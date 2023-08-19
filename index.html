@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <input type="file" id="select">
+            <input type="file" id="select" onchange="displayFileName(event)">
             <label for="select" id="fileselected">
                 <div class="img">
                     <i class="fa-solid fa-cloud-arrow-up"></i>
@@ -24,26 +24,11 @@
                 </div>
             </label>
         </div>
-        
+
         <!-- Uploaded File  -->
 
-        <div class="fileupload">
-            <div class="upload-content">
-                <div class="smallImg">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="imgName">
-                    Photo.img
-                </div>
-                <div class="upload-percent">
-                    58%
-                </div>
-            </div>
-            <div class="progress-bar">
-                <div class="bar">
-
-                </div>
-            </div>
+        <div class="allfiles">
+            
         </div>
     </div>
 

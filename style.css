@@ -50,6 +50,7 @@ label:hover ~ .row {
     padding: 6px;
     display: grid;
     place-items: center;
+    cursor: pointer;
 }
 .upload-content {
     /* margin: auto; */
@@ -62,7 +63,13 @@ label:hover ~ .row {
     padding: 2px;
     border: 0.5px solid black;
 }
-.fileupload > .upload-content > .imgName::after {
+.fileupload > .upload-content > .imgName {
+    width: 150px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis
+}
+.fileupload > .upload-content > .upload-percent::after {
     content: '\2713';
     border: 0.3px solid black;
     color: white;
@@ -78,7 +85,17 @@ label:hover ~ .row {
 }
 .progress-bar > .bar {
     background-color: #0EAAF3;
-    width: 50%;
-    height: 9px;
+    /* width: 50%; */
+    height: 8px;
     border-radius: 10px;
+    animation: progressAnimation 5s linear forwards;
+}
+
+@keyframes progressAnimation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
 }
